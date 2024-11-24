@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    background-color: #f0f8ff;
+  }
+  
+  .memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+  
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+  /* Style for the victory screen */
+.victory-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1000; 
+
+  }
+  
+  .victory-content {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .victory-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .victory-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  #restart-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  #restart-button:hover {
+    background-color: #0056b3;
+  }
+  
